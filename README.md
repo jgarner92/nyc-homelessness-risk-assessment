@@ -12,3 +12,29 @@ The algorithm produces a **risk score per ZIP code** that reflects both immediat
 Outputs are visualized as an **interactive heatmap**, highlighting the areas of greatest concern each day. The platform is designed to be **ethical, transparent, and fully privacy-conscious**, relying only on aggregated public data and avoiding individual profiling.  
 
 This tool provides actionable insights to support **street outreach teams, shelters, and nonprofits** in efficiently allocating resources and responding to homelessness in New York City.
+
+## How It Works
+
+The homelessness risk assessment algorithm follows a simple, transparent workflow:
+
+1. **Data Collection**  
+   - Pulls **311 homelessness complaints**, **weather data**, **historical housing patterns**, and **shelter locations** from public sources.  
+
+2. **Data Processing & Feature Engineering**  
+   - Aggregates complaints and historical data by ZIP code.  
+   - Applies time decay to recent 311 reports to emphasize current risk.  
+   - Computes environmental risk factors from weather (temperature, precipitation, extreme events).  
+
+3. **Risk Scoring**  
+   - Combines the processed features into a **composite risk score** per ZIP code.  
+   - Weights factors to balance immediate risk (recent complaints, extreme weather) and persistent vulnerability (historical patterns, shelter gaps).  
+
+4. **Explanation Generation**  
+   - Identifies the **top contributing factors** for each high-risk ZIP code.  
+   - Produces human-readable explanations to help outreach teams understand why an area is flagged.  
+
+5. **Visualization**  
+   - Displays the results on an **interactive heatmap** of NYC, highlighting areas of greatest concern each day.  
+   - Allows nonprofits and outreach teams to **prioritize interventions** effectively.
+
+
